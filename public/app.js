@@ -10,6 +10,6 @@ function something() {
 
 }
 
-function clear() {
-  window.localStorage.removeItem('key');
+function add_to_cart(id) {
+  alert('Hello, i am pizza id :' + id);
 }
