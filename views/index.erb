@@ -1,29 +1,29 @@
 <h2>Welcome to Pizza Shop!!</h2>
+<br>
+</br>
 
 <div class="row">
 
   <% @products.each do |p| %>
-  <div class="col-cm-3">
-    <div>
-      <%= p.title %>
+  <div class="col-md-3">
+    <div class="row">
+      <div><%= p.title %></div>
+      <div><%= p.price %></div>
     </div>
+    <div><img src="<%= p.path_to_image %>" /></div>
 
-    <div>
-      <img src="<%= p.path_to_image %>" />
-    </div>
 
-    <div>
-      <%= p.title %>
-    </div>
+    <div><%= p.description %></div>
 
-    <div>
-      <%= p.title %>
-    </div>
   </div>
 
   <% end %>
 
 </div>
+<br>
+</br>
 
 <button onclick="something()" type="submit" class="btn btn-primary">Click me</button>
 <button onclick="clear()" type="submit" class="btn btn-primary">Clear</button>
+<br>
+</br>
