@@ -17,3 +17,7 @@ end
 get '/order' do
 	erb :order
 end
+
+post '/card' do
+	erb :card
+end
