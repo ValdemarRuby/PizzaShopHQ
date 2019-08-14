@@ -2,34 +2,58 @@
 <p><%= @items %></p>
 
 <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Qty</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @total_price = 0 %>
-        <% @total_qty = 0 %>
-        <% @items.each do |item| %>
-        <tr>
-          <th scope="row">1</th>
-          <td><%= item[0].title %></td>
-          <td><%= item[1] %></td>
-          <td><%= item[0].price %></td>
-        </tr>
-        <% @total_price += item[0].price * item[1].to_i %>
-        <% @total_qty += item[1].to_i %>
-        <% end %>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @number_price = 1 %>
+    <% @total_price = 0 %>
+    <% @total_qty = 0 %>
+    <% @items.each do |item| %>
+    <tr>
+      <th scope="row"><%= @number_price %></th>
+      <td><%= item[0].title %></td>
+      <td><%= item[1] %></td>
+      <td><%= item[0].price %></td>
+    </tr>
+    <% @number_price += 1 %>
+    <% @total_price += item[0].price * item[1].to_i %>
+    <% @total_qty += item[1].to_i %>
+    <% end %>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td><%= @total_qty %></td>
-          <td>Total: <%= @total_price %> Rub</td>
-        </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><%= @total_qty %></td>
+      <td>Total: <%= @total_price %> Rub</td>
+    </tr>
 
-      </tbody>
-    </table>
+  </tbody>
+</table>
+
+<form action='/visit' method='POST'>
+  <div class="form-group">
+    <label>Name</label>
+    <input name="order[name]" type="text" class="form-control" placeholder="Enter you name" value="">
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input name="order[phone]" type="text" class="form-control" placeholder="Enter you phone" value="">
+  </div>
+
+  <div class="form-group">
+    <label>Adress</label>
+    <input name="order[adress]" type="text" class="form-control" placeholder="Enter you adress" value="">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Order</button>
+  <br>
+  </br>
+
+</form>
