@@ -18,10 +18,12 @@ get '/order' do
 	erb :order
 end
 
-post '/card' do
+post '/cart' do
 	orders_input = params[:orders]
 	@orders = parse_orders_input orders_input
-	erb :card
+
+
+	erb :cart
 end
 
 
@@ -43,5 +45,5 @@ def parse_orders_input orders_input
 		arr.push arr2
 	end
 
-	return arr2
+	return arr
 end
