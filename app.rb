@@ -56,7 +56,9 @@ end
 post '/place_order' do
 	@o = Order.new(params[:order])
 	if @o.save
-		erb "<h2>Thanks, you signed up</h2>"
+		erb :order_placed
+		# erb "<h2>Thanks, you has order, he in process</h2>"
+		# написать команду для очистки localStorage в браузере
 	end
 
 end
