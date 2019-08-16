@@ -63,6 +63,7 @@ function cart_get_orders() {
 function cancel_order() {
   window.localStorage.clear();
 
+  $('#order_clear').text('Your cart is now empty');
   update_orders_input();
   update_orders_buttom();
   return false;
