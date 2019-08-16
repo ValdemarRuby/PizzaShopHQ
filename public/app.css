@@ -1,0 +1,14 @@
+#orders_buttom {
+  background-color: #F8F8F8;
+  /* убрать поля */
+  border: none;
+  /* размер шрифта */
+  font-size: 22px;
+  /* отступ сверху */
+  padding-top: 7px;
+  padding-right: 17px;
+  padding-bottom: 7px;
+  padding-left: 20px;
+  /* подчеркивание */
+  text-decoration: underline;
+}
